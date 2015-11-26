@@ -29,6 +29,11 @@
     </description>
     <input>
 
+        <param type="string" name="raster" mustexist="true">
+          <description>The full path of a compatible image file to load.</description>
+          <value></value>
+        </param>
+
         <param type="string" name="executable" mustexist="true">
           <description>The full path of the Carta executable file.</description>
           <value></value>
@@ -46,11 +51,6 @@
 
         <param type="string" name="htmlFile" mustexist="true">
           <description>The full path of the Carta desktopIndex.html file.</description>
-          <value></value>
-        </param>
-
-        <param type="string" name="imageFile" mustexist="true">
-          <description>The full path of a compatible image file to load.</description>
           <value></value>
         </param>
 
