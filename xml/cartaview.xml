@@ -8,18 +8,10 @@
 <task type="function" name="cartaview" category="utility, visualization" async="never">
     <shortdescription>View an image</shortdescription>
     <description>
-        The cartaview task will display images in raster, contour, vector or
-	marker form.  Images can be blinked, and movies are available
-	for spectral-line image cubes.
+        The cartaview task will display images in the CARTA viewer.
 
 	Executing the cartaview task will bring up a display panel
-	window, which can be resized.  If no data file was specified,
-	a Load Data window will also appear. Click on the desired data
-	file and choose the display type; the rendered data should appear
-	on the display panel.
-
-	A Data Display Options window will also appear.  It has drop-down
-	subsections for related	options, most of which are self-explanatory.
+	window, which can be resized.
 	  
 	The state of the cartaview task -- loaded data and related display
 	options -- can be saved in a 'restore' file for later use.
@@ -34,23 +26,8 @@
           <value></value>
         </param>
 
-        <param type="string" name="executable" mustexist="true">
-          <description>The full path of the Carta executable file.</description>
-          <value></value>
-        </param>
-
         <param type="string" name="configFile" mustexist="true">
           <description>The full path of the cartavis config.json file.</description>
-          <value></value>
-        </param>
-
-        <param type="int" name="port">
-          <description>The port which will be used to send commands to Carta and receive results.</description>
-          <value>9999</value>
-        </param>
-
-        <param type="string" name="htmlFile" mustexist="true">
-          <description>The full path of the Carta desktopIndex.html file.</description>
           <value></value>
         </param>
 

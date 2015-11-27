@@ -6,6 +6,7 @@ import time
 from taskinit import *
 import viewertool
 import carta.cartavis as cartavis
+import json
 ###
 ### if numpy is not available, make float64 and ndarray redundant checks...
 ###
@@ -25,7 +26,7 @@ class __cartaview_class(object):
         self.__dirstack = [ ]
         self.__colorwedge_queue = [ ]
 
-    def __call__(self, raster, executable, configFile, port, htmlFile):
+    def __call__(self, raster, configFile):
         """
         The cartaview task will display an image in the CARTA viewer.
 
@@ -48,6 +49,12 @@ class __cartaview_class(object):
         myf=sys._getframe(stacklevel).f_globals
 
         casalog.origin('cartaview')
+
+        configJson = open(configFile).read()
+        data = json.loads(configJson)
+        executable = data["executable"]
+        htmlFile = data["htmlFile"]
+        port = data["port"]
 
         v = cartavis.Cartavis(executable, configFile, int(port), htmlFile,
                               raster)
